@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "backend" : "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jero",
@@ -14,5 +15,16 @@
     "express": "^4.17.1",
     "mongoose": "^5.11.12",
     "save": "^2.4.0"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-rojieun/BoilerPlate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dev-rojieun/BoilerPlate/issues"
+  },
+  "homepage": "https://github.com/dev-rojieun/BoilerPlate#readme"
 }
