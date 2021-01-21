@@ -1,6 +1,6 @@
 const express = require('express');  // express 모듈을 가져온다.
 const app = express();  // 이 함수를 이용해서 새로운 App 을 만든다.
-const port = 5000;   // 5000 번 포트를 백서버로 둬서 
+
 
 // body-parser : client 에서 오는 정보를 Server에서 분석해서 가져올 수있게 해준다.
 const bodyPaser = require('body-parser');
@@ -37,6 +37,10 @@ mongoose.connect(config.mogoURI, {
 app.get('/', (req, res) => // 루트 디렉토리 / 에 
   res.send('Hello World! Greeting!') // 헬로월드를 출력되게 해준다..
 )
+
+
+app.get('/api/hello', (req, res) => res.send("안녕하세여~~")); // Front 로 응답을 보냄
+
 
 
 app.use(bodyPaser.urlencoded({extended : true}));  // bodyPaser.urlencoded -> Applicaiton/x-www-form-urlencoded 로 된 정보를 분석해서 가져올 수 있게 해준다. 
@@ -160,6 +164,8 @@ app.get('/api/users/logout' , auth , (req , res ) => {
 });
 
 
+
+const port = 5000;   // 5000 번 포트를 백서버로 둬서 
 
 app.listen(port, () =>  // port 5000 번을 통해 app 을 실행하겟다... 
 {
