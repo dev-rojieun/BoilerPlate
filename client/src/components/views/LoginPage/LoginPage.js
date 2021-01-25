@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'; // 디스패치를 이용하여 액션을 취한다 - 액션 다음 리듀서 - 순서로 나아갈 것이다.
 import { loginUser } from '../../../_actions/user_action';
+import { withRouter } from 'react-router-dom';
 
 function LoginPage(props) {
 
@@ -64,4 +65,4 @@ function LoginPage(props) {
 }
 
 
-export default LoginPage
+export default withRouter(LoginPage)

@@ -133,16 +133,17 @@ Router <- Express 에서 제공하는 Router 정리기능을 사용할것이야.
 app.get('/api/users/auth', auth, (req, res) => {
 
   // 여기까지 미들웨어를 통과해 왔다는 것은 -> Authentication 이 True 라는 것이다. >> True 라는 것을 client 에 전달하기 위해서 코드기입
-  req.status(200).json({
-    _id : req.user.id, // 이렇게 할 수 있는건 auth.js 에서 req.user : user 로 했기 때문..
-    isAdmin : req.user.role == 0 ? false : true ,     // 지금은   role 이 0이면 일반유저 , 0 이 아니면 관리자 라는 뜻으로함
-    isAuth : true,
-    email : req.user.email,
-    name : req.user.name,
-    lastname : req.user.lastname,
-    rol : req.user.role,
-    image : req.user.image
-  });
+  res.status(200).json({
+    _id: req.user._id,   // 이렇게 할 수 있는건 auth.js 에서 req.user : user 로 했기 때문..
+    isAdmin: req.user.role === 0 ? false : true,  // 지금은   role 이 0이면 일반유저 , 0 이 아니면 관리자 라는 뜻으로함
+    isAuth: true,
+    email: req.user.email,
+    name: req.user.name,
+    lastname: req.user.lastname,
+    role: req.user.role,
+    image: req.user.image
+  })
+
 
 });
 

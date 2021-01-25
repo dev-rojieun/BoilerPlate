@@ -26,9 +26,9 @@ function App() {
             <LadingPage />
           </Route>
           */}
-          <Route exact path="/" component={Auth(LandingPage)} />  {/* HOC 컴포넌트 안에 컴포넌트를 넣기 위해 이렇게 처리 */}
-          <Route exact path="/login" component={Auth(LoginPage)} />
-          <Route exact path="/register" component={Auth(RegisterPage)} />
+          <Route exact path="/" component={Auth(LandingPage, null)} />  {/* HOC 컴포넌트 안에 컴포넌트를 넣기 위해 이렇게 처리 */}
+          <Route exact path="/login" component={Auth(LoginPage, false)} />
+          <Route exact path="/register" component={Auth(RegisterPage, false)} />
         </Switch>
       </div>
     </Router>

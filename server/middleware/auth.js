@@ -11,6 +11,7 @@ let auth = (req, res, next) => {
     User.findByToken(token, (err, user) => {
         if(err) throw err;
         if(!user) return res.json ({ isAuth : false, err : true });
+        
 
         req.token = token;
         req.user = user;  // 여기서 req 에 token 과 user 의 정보를 넣어주는 이유는 .... index.js 의 req 에서 req.user 를 햇을때, user정볼르가질 수 있고, req.token 을 하면 토큰을 정보를 가져올 수있도록 하기 위해서 넣어준것이다.

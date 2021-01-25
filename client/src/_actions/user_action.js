@@ -33,9 +33,9 @@ export function registerUser(dataToSubmit) {
 
 
 // 권한체크
-export function auth(dataToSubmit) {
-
-     const request = axios.post('/api/users/auth', dataToSubmit)
+export function auth() {
+                            // axios.get('/api/users/auth'는 server/index 에서 지정...
+     const request = axios.get('/api/users/auth')
           .then(response => response.data)
 
      return {
